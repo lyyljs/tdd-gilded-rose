@@ -2,6 +2,7 @@ package cn.xpbootcamp.gilded_rose.commodity;
 
 import cn.xpbootcamp.gilded_rose.commodity.exception.NoSuchCommodityTypeUpdateHandlerError;
 
+import static cn.xpbootcamp.gilded_rose.commodity.CommodityFactory.QUALITY_MAX;
 import static cn.xpbootcamp.gilded_rose.commodity.CommodityFactory.QUALITY_MIN;
 
 public class CommodityUpdateHandler {
@@ -12,9 +13,25 @@ public class CommodityUpdateHandler {
             case GENERAL:
                 updateGeneralCommodity(commodity);
                 break;
+            case COLLECTABLE:
+                updateCollectableCommodity(commodity);
+                break;
             default:
                 throw new NoSuchCommodityTypeUpdateHandlerError(commodity.getType());
         }
+    }
+
+    private static void updateCollectableCommodity(Commodity commodity) {
+        updateCollectableCommodityQuality(commodity);
+        updateSellInValue(commodity);
+    }
+
+    private static void updateCollectableCommodityQuality(Commodity commodity) {
+        int newQuality = commodity.getQuality() + DEFAULT_QUALITY_DROP_VALUE;
+        if (newQuality > QUALITY_MAX) {
+            newQuality = QUALITY_MAX;
+        }
+        commodity.setQuality(newQuality);
     }
 
     private static void updateGeneralCommodity(Commodity commodity) {
