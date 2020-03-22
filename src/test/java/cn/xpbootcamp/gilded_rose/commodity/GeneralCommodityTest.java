@@ -7,7 +7,7 @@ import static cn.xpbootcamp.gilded_rose.commodity.CommodityFactory.QUALITY_MIN;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class CommodityTest {
+public class GeneralCommodityTest {
 
     private static final String DEFAULT_NAME = "G1";
 
