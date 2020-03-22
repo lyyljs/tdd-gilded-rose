@@ -12,6 +12,11 @@ public class CommodityFactory {
         return new Commodity(name, sellIn, quality, CommodityType.GENERAL);
     }
 
+    public static Commodity createCollectableCommodity(String name, int sellIn, int quality) {
+        checkQuality(quality);
+        return new Commodity(name, sellIn, quality, CommodityType.COLLECTABLE);
+    }
+
     private static void checkQuality(int quality) {
         if (quality < QUALITY_MIN || quality > QUALITY_MAX) {
             throw new InvalidCommodityQualityError("quality value should in [0, 50], now quality = " + quality);
