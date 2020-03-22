@@ -6,6 +6,13 @@ public class Commodity {
     private int quality;
     private CommodityType type;
 
+    Commodity(String name, int sellIn, int quality, CommodityType type){
+        this.name = name;
+        this.sellIn = sellIn;
+        this.quality = quality;
+        this.type = type;
+    }
+
     public String getName() {
         return name;
     }

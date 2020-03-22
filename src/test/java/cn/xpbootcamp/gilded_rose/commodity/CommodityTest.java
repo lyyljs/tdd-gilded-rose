@@ -1,5 +1,6 @@
 package cn.xpbootcamp.gilded_rose.commodity;
 
+import cn.xpbootcamp.gilded_rose.commodity.exception.InvalidCommodityQualityError;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
