@@ -3,6 +3,7 @@ package cn.xpbootcamp.gilded_rose.commodity;
 import cn.xpbootcamp.gilded_rose.commodity.exception.InvalidCommodityQualityError;
 import org.junit.jupiter.api.Test;
 
+import static cn.xpbootcamp.gilded_rose.commodity.CommodityFactory.QUALITY_MIN;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -42,6 +43,6 @@ public class CommodityTest {
         for (int i = 0; i < 10; i++) {
             commodity.updateStat();
         }
-        assertEquals(commodity.getQuality(), 0);
+        assertEquals(commodity.getQuality(), QUALITY_MIN);
     }
 }

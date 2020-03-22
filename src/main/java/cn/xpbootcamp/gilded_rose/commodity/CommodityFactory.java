@@ -4,7 +4,7 @@ import cn.xpbootcamp.gilded_rose.commodity.exception.InvalidCommodityQualityErro
 
 public class CommodityFactory {
 
-    private static final int QUALITY_MIN = 0;
+    public static final int QUALITY_MIN = 0;
     public static final int QUALITY_MAX = 50;
 
     public static Commodity createGeneralCommodity(String name, int sellIn, int quality) {
