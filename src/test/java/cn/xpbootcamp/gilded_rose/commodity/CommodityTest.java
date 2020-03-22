@@ -26,4 +26,22 @@ public class CommodityTest {
         assertThrows(InvalidCommodityQualityError.class, () -> CommodityFactory.createGeneralCommodity(DEFAULT_NAME, 1, -1));
         assertThrows(InvalidCommodityQualityError.class, () -> CommodityFactory.createGeneralCommodity(DEFAULT_NAME, 1, 52));
     }
+
+    @Test
+    public void should_update_general_commodity_stat_correct() {
+        Commodity commodity = CommodityFactory.createGeneralCommodity(DEFAULT_NAME, 1, 10);
+
+        commodity.updateStat();
+        assertEquals(commodity.getSellIn(), 0);
+        assertEquals(commodity.getQuality(), 9);
+
+        commodity.updateStat();
+        assertEquals(commodity.getSellIn(), -1);
+        assertEquals(commodity.getQuality(), 7);
+
+        for (int i = 0; i < 10; i++) {
+            commodity.updateStat();
+        }
+        assertEquals(commodity.getQuality(), 0);
+    }
 }
