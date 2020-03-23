@@ -3,6 +3,7 @@ package cn.xpbootcamp.gilded_rose.commodity;
 import cn.xpbootcamp.gilded_rose.commodity.exception.InvalidCommodityQualityError;
 import org.junit.jupiter.api.Test;
 
+import static cn.xpbootcamp.gilded_rose.commodity.CommodityType.IMMORTAL;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 

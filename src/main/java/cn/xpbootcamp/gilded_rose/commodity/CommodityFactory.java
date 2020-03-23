@@ -8,13 +8,20 @@ public class CommodityFactory {
     public static final int QUALITY_MAX = 50;
 
     public static Commodity createGeneralCommodity(String name, int sellIn, int quality) {
-        checkQuality(quality);
-        return new Commodity(name, sellIn, quality, CommodityType.GENERAL);
+        return createCommodity(name, sellIn, quality, CommodityType.GENERAL);
     }
 
     public static Commodity createCollectableCommodity(String name, int sellIn, int quality) {
+        return createCommodity(name, sellIn, quality, CommodityType.COLLECTABLE);
+    }
+
+    public static Commodity createImmortalCommodity(String name, int sellIn, int quality) {
+        return createCommodity(name, sellIn, quality, CommodityType.IMMORTAL);
+    }
+
+    private static Commodity createCommodity(String name, int sellIn, int quality, CommodityType type) {
         checkQuality(quality);
-        return new Commodity(name, sellIn, quality, CommodityType.COLLECTABLE);
+        return new Commodity(name, sellIn, quality, type);
     }
 
     private static void checkQuality(int quality) {
