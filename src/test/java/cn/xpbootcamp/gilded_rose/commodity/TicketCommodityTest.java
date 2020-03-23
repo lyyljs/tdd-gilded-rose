@@ -3,6 +3,7 @@ package cn.xpbootcamp.gilded_rose.commodity;
 import cn.xpbootcamp.gilded_rose.commodity.exception.InvalidCommodityQualityError;
 import org.junit.jupiter.api.Test;
 
+import static cn.xpbootcamp.gilded_rose.commodity.CommodityType.TICKET;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -15,7 +16,7 @@ public class TicketCommodityTest {
         assertEquals(commodity.getName(), COMMODITY_NAME);
         assertEquals(commodity.getSellIn(), 2);
         assertEquals(commodity.getQuality(), 10);
-        assertEquals(commodity.getType(), Ticket);
+        assertEquals(commodity.getType(), TICKET);
     }
 
     @Test

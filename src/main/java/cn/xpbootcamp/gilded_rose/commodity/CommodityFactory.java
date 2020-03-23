@@ -19,6 +19,10 @@ public class CommodityFactory {
         return createCommodity(name, sellIn, quality, CommodityType.IMMORTAL);
     }
 
+    public static Commodity createTicketCommodity(String name, int sellIn, int quality) {
+        return createCommodity(name, sellIn, quality, CommodityType.TICKET);
+    }
+
     private static Commodity createCommodity(String name, int sellIn, int quality, CommodityType type) {
         checkQuality(quality);
         return new Commodity(name, sellIn, quality, type);
@@ -29,4 +33,5 @@ public class CommodityFactory {
             throw new InvalidCommodityQualityError("quality value should in [0, 50], now quality = " + quality);
         }
     }
+
 }
