@@ -16,9 +16,16 @@ public class CommodityUpdateHandler {
             case COLLECTABLE:
                 updateCollectableCommodity(commodity);
                 break;
+            case IMMORTAL:
+                updateImmortalCommodity(commodity);
+                break;
             default:
                 throw new NoSuchCommodityTypeUpdateHandlerError(commodity.getType());
         }
+    }
+
+    private static void updateImmortalCommodity(Commodity commodity) {
+        updateSellInValue(commodity);
     }
 
     private static void updateCollectableCommodity(Commodity commodity) {
